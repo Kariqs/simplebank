@@ -1,0 +1,11 @@
+version: "2" # Config file version (must be "2" for sqlc v2)
+
+sql:
+  - schema: "db/migration" # Folder with schema / migration files
+    queries: "db/query" # Folder with handwritten query files
+    engine: "postgresql" # Database engine (postgresql, mysql, sqlite, etc.)
+    gen:
+      go:
+        package: "db" # Name of the generated Go package
+        out: "db/sqlc" # Where to put the generated code
+        emit_json_tags: true #adds json tags to the generated structs
